@@ -14,3 +14,6 @@ Para incorporar dentro de outra página, também é possível carregar o index.h
 
 IMPORTANTE
 Mantenha o arquivo data.js ao lado do index.html, pois o painel o carrega pelo caminho relativo "data.js".
+
+
+Ordem do menu (desktop e mobile): Relatório → Painel → Evolução → Território → 2026.
