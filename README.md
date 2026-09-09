@@ -74,6 +74,12 @@ Ordem do menu (desktop e mobile): Relatório → Campanhas → Evolução → Te
 - Os dados municipais somam exatamente 2.801.182 eleitores. A análise estratégica de 2026 continua baseada no relatório; os quantitativos eleitorais foram atualizados com a base TSE.
 
 
-## Versão 1.6.1
+## Versão 1.6.2
 - Em Campanhas > 2020, o KPI “Zonas vencidas” foi substituído por “Abstenções”.
 - Valor oficial do 2º turno: 298.712 abstenções (22,43% do eleitorado), conforme TSE.
+
+
+## Atualização 1.6.2
+- A seção Campanhas > 2024 passou a usar integralmente os números do 2º turno de 27/10/2024.
+- KPIs: 1.446.122 aptos; 1.107.870 comparecimentos; 1.055.468 votos válidos; David Almeida 576.171 (54,59%); Capitão Alberto Neto 479.297 (45,41%); 338.252 abstenções (23,39%); 22.161 brancos; 30.241 nulos.
+- O explorador das 13 zonas eleitorais também foi atualizado para a votação do 2º turno.
