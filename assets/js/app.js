@@ -6,14 +6,8 @@
   const pct = (n, d) => d ? (n / d * 100) : 0;
   const pctFmt = n => `${n.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})}%`;
 
-  // theme
-  const savedTheme = localStorage.getItem('relatorio-theme');
-  if (savedTheme === 'light') document.documentElement.dataset.theme = 'light';
-  $('#themeToggle').addEventListener('click', () => {
-    const light = document.documentElement.dataset.theme !== 'light';
-    document.documentElement.dataset.theme = light ? 'light' : 'dark';
-    localStorage.setItem('relatorio-theme', light ? 'light' : 'dark');
-  });
+  // O site de referência trabalha com uma identidade clara, sem alternância de tema.
+  document.documentElement.dataset.theme = 'light';
 
   // scroll progress
   const updateProgress = () => {

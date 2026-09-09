@@ -1,36 +1,30 @@
-# Relatório Eleitoral Interativo — Amazonas / Manaus (2018–2026)
+# Relatório Eleitoral Interativo — David Almeida (2018–2026)
 
-Site estático criado a partir do relatório fornecido pelo usuário e inspirado na organização visual do painel de referência indicado na conversa.
+Site estático produzido a partir do relatório-fonte fornecido pelo usuário.
+
+## Identidade visual
+
+A versão atual foi remodelada para seguir a mesma linguagem visual do painel de referência **“Painel Eleitoral Amazonas — 2018 e 2024”**: fundo claro em tons quentes, cartões brancos, bordas suaves, tipografia compacta e paleta terrosa com laranja e verde-água.
+
+Paleta principal:
+- Fundo: `#faf5ef`
+- Cartões: `#ffffff`
+- Texto: `#3d3634`
+- Texto secundário: `#8a7f78`
+- Laranja: `#e8955a` / `#c97a2e`
+- Verde-água: `#7fb3ae`
+- Bordas: `#ecdfd2`
 
 ## Como abrir
 
-Basta abrir `index.html` em um navegador moderno. O site foi construído para funcionar sem servidor local e sem bibliotecas JavaScript externas.
-
-O pacote não depende de bibliotecas externas nem de conexão com a internet para funcionar.
+Abra `index.html` diretamente no navegador ou publique a pasta inteira em qualquer hospedagem estática (Hostinger, Vercel, Netlify, GitHub Pages etc.).
 
 ## Estrutura
 
 - `index.html` — página principal
-- `assets/css/styles.css` — estilos responsivos e temas claro/escuro
-- `assets/js/data.js` — base de dados extraída do relatório
-- `assets/js/app.js` — interações, gráficos, filtros e exportação CSV
-- `assets/img/favicon.svg` — ícone do site
+- `assets/css/styles.css` — identidade visual
+- `assets/js/data.js` — dados do relatório
+- `assets/js/app.js` — interações e gráficos
 - `docs/relatorio-fonte.pdf` — relatório original
 
-## Recursos
-
-- Alternância entre 2018, 2020 e 2024
-- KPIs de eleitorado, comparecimento, votos válidos, votação e abstenção
-- Gráficos em HTML/CSS/JavaScript puro
-- Comparação 2020 × 2024
-- Linha do tempo 2018–2026
-- Explorador das 13 zonas eleitorais com busca, filtro e ordenação
-- Ranking dos municípios destacados em 2018
-- Visualização demográfica e projeção para 2026
-- Exportação de resumo em CSV
-- Tema claro/escuro
-- Notas metodológicas sobre divergências aritméticas encontradas no relatório
-
-## Publicação
-
-Pode ser hospedado como site estático em GitHub Pages, Hostinger, Vercel, Netlify ou servidor Apache/Nginx. Não exige build.
+O site não depende de backend.
