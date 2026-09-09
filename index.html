@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Relatório interativo sobre a trajetória eleitoral de David Almeida no Amazonas e em Manaus, de 2018 a 2026." />
+  <title>Relatório Eleitoral — David Almeida | 2018–2026</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260909" />
+</head>
+<body>
+  <div class="progress" id="pageProgress" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand__mark">AM</span>
+        <span class="brand__copy"><strong>Relatório Eleitoral</strong><small>Amazonas · Manaus · 2018–2026</small></span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#visao-geral">Visão geral</a>
+        <a href="#evolucao">Evolução</a>
+        <a href="#territorio">Território</a>
+        <a href="#eleitorado">Eleitorado</a>
+        <a href="#2026">2026</a>
+      </nav>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">◐</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div>
+          <div class="eyebrow"><span class="live-dot"></span> Inteligência eleitoral · base documental</div>
+          <h1>Trajetória, evolução e <span>cartografia do voto</span> de David Almeida</h1>
+          <p class="hero__lead">Leitura interativa do relatório analítico 2018–2026, transformando tabelas, séries históricas e recortes territoriais em indicadores comparáveis e navegáveis.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#visao-geral">Explorar indicadores</a>
+            <a class="btn btn--ghost" href="docs/relatorio-fonte.pdf" target="_blank" rel="noopener">Abrir relatório-fonte ↗</a>
+          </div>
+          <div class="hero__meta">
+            <span>2018 · Governo do Amazonas</span><i></i><span>2020/2024 · Prefeitura de Manaus</span><i></i><span>2026 · Projeções</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Resumo executivo">
+          <div class="hero-panel__head"><span>RESUMO EXECUTIVO</span><span class="status-pill">INTERATIVO</span></div>
+          <div class="hero-stat"><strong>+109.201</strong><span>votos entre os 2º turnos de 2020 e 2024</span></div>
+          <div class="hero-stat"><strong>11 / 13</strong><span>zonas eleitorais vencidas em Manaus no 2º turno de 2024</span></div>
+          <div class="hero-stat"><strong>2,8 mi</strong><span>eleitores projetados no Amazonas para 2026</span></div>
+          <div class="microline"><span style="width:84.6%"></span></div>
+          <small>Controle territorial em 2024: 84,6% das zonas.</small>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="visao-geral">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">Visão geral</div><h2>Os números que estruturam o relatório</h2></div>
+          <div class="segmented" id="yearSwitcher" aria-label="Selecionar ciclo eleitoral">
+            <button data-year="2018">2018</button><button data-year="2020">2020</button><button class="active" data-year="2024">2024</button>
+          </div>
+        </div>
+
+        <div class="kpi-grid" id="kpiGrid"></div>
+
+        <div class="grid grid--2 dashboard-row">
+          <article class="card chart-card">
+            <div class="card__head">
+              <div><span class="card__kicker" id="snapshotKicker">2º turno · Manaus</span><h3 id="snapshotTitle">Composição do eleitorado — 2024</h3></div>
+              <span class="tag" id="snapshotTag">1.446.122 aptos</span>
+            </div>
+            <div class="donut-layout">
+              <div class="donut" id="compositionDonut"><div class="donut__center"><strong id="donutCenter">76,6%</strong><span>comparecimento</span></div></div>
+              <div class="legend" id="compositionLegend"></div>
+            </div>
+          </article>
+
+          <article class="card chart-card">
+            <div class="card__head">
+              <div><span class="card__kicker">Comparação longitudinal</span><h3>Votação nominal de David Almeida</h3></div>
+              <span class="tag tag--accent">2018 → 2024</span>
+            </div>
+            <div id="votesBarChart" class="bar-chart" role="img" aria-label="Gráfico comparativo da votação de David Almeida"></div>
+            <p class="chart-note">Escopos distintos: 2018 mostra votação estadual e o recorte da capital; 2020 e 2024 são disputas municipais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evolucao">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">Evolução 2018–2024</div><h2>Da construção de recall à ampliação territorial</h2></div>
+          <button class="btn btn--small btn--ghost" id="exportCsv" type="button">Exportar resumo CSV</button>
+        </div>
+
+        <div class="timeline" id="timeline"></div>
+
+        <div class="grid grid--3 dashboard-row">
+          <article class="card metric-card">
+            <span class="card__kicker">Salto quantitativo</span>
+            <strong class="metric-card__value">+23,38%</strong>
+            <p>crescimento dos votos absolutos entre os segundos turnos de 2020 e 2024.</p>
+            <div class="mini-compare"><span>466.970</span><i>→</i><span>576.171</span></div>
+          </article>
+          <article class="card metric-card">
+            <span class="card__kicker">Validação percentual</span>
+            <strong class="metric-card__value">+3,32 p.p.</strong>
+            <p>de 51,27% para 54,59% dos votos válidos no segundo turno.</p>
+            <div class="spark" aria-hidden="true"><span style="height:55%"></span><span style="height:66%"></span></div>
+          </article>
+          <article class="card metric-card">
+            <span class="card__kicker">Controle territorial</span>
+            <strong class="metric-card__value">+3 ZEs</strong>
+            <p>de 8 das 13 zonas eleitorais em 2020 para 11 das 13 em 2024.</p>
+            <div class="territory-mini"><b style="width:61.5%"></b><b style="width:84.6%"></b></div>
+          </article>
+        </div>
+
+        <article class="card dashboard-row">
+          <div class="card__head">
+            <div><span class="card__kicker">Participação e “não voto”</span><h3>Segundo turno: 2020 × 2024</h3></div>
+            <span class="tag">percentuais recalculados</span>
+          </div>
+          <div id="turnoutCompare" class="compare-bars"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="territorio">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">Cartografia eleitoral</div><h2>13 zonas eleitorais, 63 bairros e perfis distintos</h2></div>
+          <p class="section-head__note">A jurisdição territorial abaixo reproduz a estrutura descrita no relatório. Os intervalos de eleitores são referências históricas.</p>
+        </div>
+
+        <div class="grid grid--2 territory-summary">
+          <article class="card territory-control">
+            <div class="card__head"><div><span class="card__kicker">2º turno · 2020</span><h3>8 zonas vencidas</h3></div><strong>61,5%</strong></div>
+            <div class="zone-strip" aria-label="8 de 13 zonas vencidas em 2020"><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <article class="card territory-control">
+            <div class="card__head"><div><span class="card__kicker">2º turno · 2024</span><h3>11 zonas vencidas</h3></div><strong>84,6%</strong></div>
+            <div class="zone-strip" aria-label="11 de 13 zonas vencidas em 2024"><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i class="won"></i><i></i><i></i></div>
+          </article>
+        </div>
+
+        <div class="territory-explorer card dashboard-row">
+          <div class="explorer-toolbar">
+            <div class="searchbox"><span>⌕</span><input id="zoneSearch" type="search" placeholder="Buscar zona, bairro ou perfil..." /></div>
+            <select id="profileFilter" aria-label="Filtrar perfil geográfico"><option value="all">Todos os perfis</option></select>
+            <select id="zoneSort" aria-label="Ordenar zonas"><option value="zone">Ordenar: zona</option><option value="electorate-desc">Maior eleitorado</option><option value="electorate-asc">Menor eleitorado</option></select>
+          </div>
+          <div class="zone-grid" id="zoneGrid"></div>
+          <div class="empty-state" id="emptyState" hidden>Nenhuma zona encontrada com os filtros atuais.</div>
+        </div>
+
+        <div class="grid grid--2 dashboard-row">
+          <article class="card">
+            <div class="card__head"><div><span class="card__kicker">2018 · interior</span><h3>Praças destacadas no relatório</h3></div><span class="tag">força territorial</span></div>
+            <div id="municipalityBars" class="rank-bars"></div>
+          </article>
+          <article class="card callout-card">
+            <span class="card__kicker">Leitura territorial do documento</span>
+            <h3>Leste e Norte como vetores de expansão</h3>
+            <p>O relatório associa a maior intensidade do crescimento de 2024 às zonas Leste e Norte e destaca a 63ª ZE como referência de grande colégio eleitoral. Para a Zona Leste, o texto modela crescimento superior a 15%–18% no endosso em relação a 2020, sem apresentar uma série completa por zona.</p>
+            <div class="callout-list"><span><b>59ª, 63ª, 68ª</b> · eixo Leste</span><span><b>58ª, 62ª, 65ª, 70ª</b> · eixo Norte/Noroeste</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="eleitorado">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">Demografia e participação</div><h2>O eleitorado como variável central</h2></div>
+          <span class="tag">IBGE + TSE conforme relatório</span>
+        </div>
+
+        <div class="grid grid--2 dashboard-row">
+          <article class="card">
+            <div class="card__head"><div><span class="card__kicker">População</span><h3>Amazonas e Manaus</h3></div><span class="tag">2022 → 2026</span></div>
+            <div id="populationChart" class="population-chart"></div>
+            <p class="chart-note">Valores de 2026 são projeções citadas no relatório.</p>
+          </article>
+          <article class="card">
+            <div class="card__head"><div><span class="card__kicker">Estrutura do voto</span><h3>Obrigatório × facultativo</h3></div><span class="tag">modelagem do relatório</span></div>
+            <div class="big-split">
+              <div><strong>86%</strong><span>voto obrigatório</span><small>≈ 2,4 milhões em 2026</small></div>
+              <div><strong>14%</strong><span>voto facultativo</span><small>≈ 390 mil em 2026</small></div>
+            </div>
+            <div class="split-bar"><span style="width:86%"></span><i></i></div>
+            <p class="chart-note">Aplicação da proporção nacional citada pelo documento ao eleitorado amazonense projetado.</p>
+          </article>
+        </div>
+
+        <article class="card dashboard-row nonvote-card">
+          <div class="card__head"><div><span class="card__kicker">Manaus · 2º turno</span><h3>O peso da abstenção</h3></div><span class="tag tag--danger">mais de 300 mil ausentes</span></div>
+          <div class="nonvote-grid">
+            <div class="nonvote-year"><span>2020</span><strong>298.712</strong><small>22,43% dos aptos</small></div>
+            <div class="nonvote-arrow">→</div>
+            <div class="nonvote-year"><span>2024</span><strong>338.252</strong><small>23,39% dos aptos</small></div>
+            <div class="nonvote-insight"><b>+39.540</b><span>abstenções em números absolutos</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="2026">
+      <div class="container">
+        <div class="section-head section-head--light">
+          <div><div class="eyebrow">Horizonte 2026</div><h2>Um colégio eleitoral de 2.801.182 pessoas</h2></div>
+          <span class="tag tag--inverse">+5,7% no estado</span>
+        </div>
+        <div class="forecast-grid">
+          <article class="forecast-primary">
+            <span>ELEITORADO PROJETADO · AMAZONAS</span><strong>2.801.182</strong>
+            <div class="forecast-line"><i style="width:86%"></i></div>
+            <small>O relatório destaca Manaus, Manacapuru, Itacoatiara, Parintins e Coari como colégios matematicamente relevantes.</small>
+          </article>
+          <article class="forecast-card"><span>Base cativa citada</span><strong>576.171</strong><small>votos obtidos em Manaus no 2º turno de 2024</small></article>
+          <article class="forecast-card"><span>Interior / rural</span><strong>≈ 1,05 mi</strong><small>contingente mencionado no relatório</small></article>
+          <article class="forecast-card"><span>Voto facultativo</span><strong>≈ 390 mil</strong><small>estimativa modelada em 14%</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodologia">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">Metodologia</div><h2>Como este site interpreta o documento</h2></div>
+        </div>
+        <div class="grid grid--3 methodology">
+          <article class="card"><span class="step">01</span><h3>Fonte primária</h3><p>Todos os indicadores substantivos foram extraídos do relatório fornecido. O PDF integral acompanha este pacote em <code>docs/relatorio-fonte.pdf</code>.</p></article>
+          <article class="card"><span class="step">02</span><h3>Percentuais</h3><p>Quando o documento fornece volumes absolutos e percentuais divergentes, o painel recalcula percentuais a partir dos volumes absolutos e registra a divergência abaixo.</p></article>
+          <article class="card"><span class="step">03</span><h3>Limites territoriais</h3><p>O relatório não fornece malha geográfica oficial das ZEs. Por isso, o painel usa um explorador estrutural por zona, sem desenhar fronteiras cartográficas inventadas.</p></article>
+        </div>
+
+        <details class="consistency card dashboard-row">
+          <summary>Notas de consistência encontradas no relatório <span>3 observações</span></summary>
+          <div class="consistency__body">
+            <p><b>2020 — “não voto”:</b> a soma da tabela (298.712 abstenções + 43.232 brancos + 78.952 nulos) equivale a 420.896, ou 31,61% dos 1.331.613 aptos; o texto cita 34,26%.</p>
+            <p><b>2024 — brancos/nulos:</b> os percentuais rotulados como “do eleitorado apto” na tabela coincidem mais de perto com percentuais sobre o comparecimento. O site preserva os volumes absolutos e recalcula sobre a base explicitada.</p>
+            <p><b>População 2026:</b> 2.327.101 habitantes de Manaus sobre 4.360.926 do Amazonas correspondem a aproximadamente 53,4%; o texto do relatório menciona cerca de 55,4%.</p>
+          </div>
+        </details>
+
+        <div class="source-note dashboard-row">
+          <div><b>Base documental</b><span>Relatório Analítico e Estratégico de Conjuntura Político-Eleitoral: Trajetória, Evolução e Cartografia do Voto de David Almeida (2018–2026)</span></div>
+          <a class="btn btn--small btn--primary" href="docs/relatorio-fonte.pdf" target="_blank" rel="noopener">Consultar PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner"><span>Relatório Eleitoral Interativo · Amazonas</span><span>Dados reproduzidos e visualizados a partir do relatório-fonte.</span></div>
+  </footer>
+
+  <script src="assets/js/data.js?v=20260909"></script>
+  <script src="assets/js/app.js?v=20260909"></script>
+</body>
+</html>
