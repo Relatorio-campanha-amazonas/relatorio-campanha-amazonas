@@ -72,3 +72,8 @@ Ordem do menu (desktop e mobile): Relatório → Campanhas → Evolução → Te
 - Manaus: **1.472.138**; interior: **1.329.044**.
 - Foi adicionado um mapa municipal de 2026 reutilizando a mesma malha cartográfica do painel de 2018, agora colorida pelo número de eleitores aptos nos 62 municípios.
 - Os dados municipais somam exatamente 2.801.182 eleitores. A análise estratégica de 2026 continua baseada no relatório; os quantitativos eleitorais foram atualizados com a base TSE.
+
+
+## Versão 1.6.1
+- Em Campanhas > 2020, o KPI “Zonas vencidas” foi substituído por “Abstenções”.
+- Valor oficial do 2º turno: 298.712 abstenções (22,43% do eleitorado), conforme TSE.
