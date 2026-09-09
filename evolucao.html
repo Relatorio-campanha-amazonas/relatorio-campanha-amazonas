@@ -8,59 +8,80 @@
 @media(max-width:760px){body{padding-bottom:calc(82px + env(safe-area-inset-bottom))}.site-nav{display:none}.mobile-bottom-nav{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:1200;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;padding:7px;border:1px solid rgba(73,104,94,.72);border-radius:18px;background:rgba(6,19,15,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 18px 45px rgba(0,0,0,.42)}.mobile-bottom-nav a{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:56px;border-radius:12px;color:#89a49a;text-decoration:none;font-size:.62rem;font-weight:800;line-height:1;white-space:nowrap}.mobile-bottom-nav a.active{color:#ff9b55;background:rgba(255,122,26,.12)}.mobile-bottom-nav .nav-icon{width:20px;height:20px}.shell{padding-bottom:14px}.top{padding-top:3px}}
 @media(max-width:380px){.mobile-bottom-nav{left:6px;right:6px;bottom:calc(6px + env(safe-area-inset-bottom));padding:5px}.mobile-bottom-nav a{font-size:.56rem;height:54px}.mobile-bottom-nav .nav-icon{width:19px;height:19px}}
 
-/* FIX 1.3.1 — menu mobile visível desde o primeiro frame */
-:root{--mobile-nav-visual-offset:0px}
+
+/* FIX 1.3.2 — navegação mobile em camada de aplicativo */
+.mobile-nav-viewport{display:none}
 @media(max-width:760px){
   html,body{min-height:100%;overflow-x:hidden}
   body{padding-bottom:calc(92px + env(safe-area-inset-bottom))!important}
-  .mobile-bottom-nav{
+  .mobile-nav-viewport{
+    display:block!important;
     position:fixed!important;
+    left:0!important;
+    top:0!important;
+    width:100%!important;
+    height:100svh;
     z-index:2147483000!important;
+    pointer-events:none!important;
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  .mobile-nav-viewport .mobile-bottom-nav{
+    position:absolute!important;
     left:10px!important;
     right:10px!important;
-    bottom:calc(10px + env(safe-area-inset-bottom) + var(--mobile-nav-visual-offset))!important;
+    top:auto!important;
+    bottom:calc(10px + env(safe-area-inset-bottom))!important;
     width:auto!important;
     margin:0!important;
     display:grid!important;
     visibility:visible!important;
     opacity:1!important;
-    transform:translateZ(0)!important;
-    -webkit-transform:translateZ(0)!important;
-    will-change:transform;
-    isolation:isolate;
+    transform:none!important;
+    -webkit-transform:none!important;
     pointer-events:auto!important;
+    z-index:1!important;
   }
 }
 @media(max-width:380px){
-  .mobile-bottom-nav{
+  .mobile-nav-viewport .mobile-bottom-nav{
     left:6px!important;
     right:6px!important;
-    bottom:calc(6px + env(safe-area-inset-bottom) + var(--mobile-nav-visual-offset))!important;
+    bottom:calc(6px + env(safe-area-inset-bottom))!important;
   }
 }
 
-</style></head><body><nav class="mobile-bottom-nav" aria-label="Navegação móvel"><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Painel</span></a><a class="active" href="evolucao.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V3"/></svg><span>Evolução</span></a><a href="territorio.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg><span>Território</span></a><a href="estrategia-2026.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m16 8 5-5"/><path d="M18 3h3v3"/></svg><span>2026</span></a><a href="relatorio.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h8"/><path d="M9 17h6"/></svg><span>Relatório</span></a></nav><script id="mobile-nav-viewport-fix">
+</style></head><body><div class="mobile-nav-viewport" aria-hidden="false"><nav class="mobile-bottom-nav" aria-label="Navegação móvel"><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Painel</span></a><a class="active" href="evolucao.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V3"/></svg><span>Evolução</span></a><a href="territorio.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg><span>Território</span></a><a href="estrategia-2026.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m16 8 5-5"/><path d="M18 3h3v3"/></svg><span>2026</span></a><a href="relatorio.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h8"/><path d="M9 17h6"/></svg><span>Relatório</span></a></nav></div><script id="mobile-nav-app-viewport-fix">
 (function(){
-  const root=document.documentElement;
-  const vv=window.visualViewport;
-  function syncMobileNav(){
-    let offset=0;
-    if(vv){
-      const layoutH=Math.max(document.documentElement.clientHeight||0, window.innerHeight||0);
-      offset=Math.max(0, layoutH - vv.height - vv.offsetTop);
-      /* Evita deslocamentos anormais causados por teclado/zoom. */
-      if(offset>180) offset=0;
+  const layer=document.querySelector('.mobile-nav-viewport');
+  if(!layer) return;
+  const mq=window.matchMedia('(max-width: 760px)');
+
+  function syncMobileViewport(){
+    if(!mq.matches){
+      layer.style.removeProperty('height');
+      layer.style.removeProperty('top');
+      return;
     }
-    root.style.setProperty('--mobile-nav-visual-offset', offset.toFixed(1)+'px');
+    const vv=window.visualViewport;
+    const h=vv && vv.height ? vv.height : window.innerHeight;
+    const top=vv && Number.isFinite(vv.offsetTop) ? vv.offsetTop : 0;
+    /* A camada acompanha somente a área realmente visível do navegador. */
+    layer.style.height=Math.max(1,h)+'px';
+    layer.style.top=Math.max(0,top)+'px';
   }
-  syncMobileNav();
-  requestAnimationFrame(syncMobileNav);
-  window.addEventListener('pageshow',syncMobileNav,{passive:true});
-  window.addEventListener('resize',syncMobileNav,{passive:true});
-  window.addEventListener('orientationchange',syncMobileNav,{passive:true});
-  if(vv){
-    vv.addEventListener('resize',syncMobileNav,{passive:true});
-    vv.addEventListener('scroll',syncMobileNav,{passive:true});
+
+  syncMobileViewport();
+  requestAnimationFrame(syncMobileViewport);
+  setTimeout(syncMobileViewport,60);
+  setTimeout(syncMobileViewport,250);
+  setTimeout(syncMobileViewport,700);
+  window.addEventListener('pageshow',syncMobileViewport,{passive:true});
+  window.addEventListener('resize',syncMobileViewport,{passive:true});
+  window.addEventListener('orientationchange',syncMobileViewport,{passive:true});
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',syncMobileViewport,{passive:true});
+    window.visualViewport.addEventListener('scroll',syncMobileViewport,{passive:true});
   }
 })();
 </script><main class="shell"><nav class="site-nav" aria-label="Navegação principal"><div class="site-nav-inner"><a class="brand" href="index.html"><span class="brand-mark">AM</span><span>Relatório Amazonas<small>Inteligência eleitoral</small></span></a><div class="desktop-links"><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Painel</a><a class="active" href="evolucao.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V3"/></svg>Evolução</a><a href="territorio.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>Território</a><a href="estrategia-2026.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m16 8 5-5"/><path d="M18 3h3v3"/></svg>Estratégia 2026</a><a href="relatorio.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h8"/><path d="M9 17h6"/></svg>Relatório</a></div></div></nav><section class="page-placeholder"><article class="panel placeholder-card"><div class="placeholder-icon"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V3"/></svg></div><div class="eyebrow">Relatório Amazonas</div><h1>Evolução eleitoral</h1><p>Comparativos históricos, crescimento de votação e indicadores de desempenho entre os ciclos eleitorais.</p><a class="action" href="index.html">Voltar ao painel principal</a></article></section></main></body></html>

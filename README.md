@@ -38,7 +38,11 @@ Foi adicionada uma navegação responsiva compartilhada:
 - Páginas futuras já possuem arquivos-base para evitar links quebrados.
 
 
-## Versão 1.3.1 — correção do menu mobile
+## Versão 1.3.2 — correção do menu mobile
 - A barra de navegação inferior agora é carregada imediatamente após a abertura do `<body>`, antes dos scripts pesados do painel.
 - `position: fixed` reforçado para permanecer visível desde o primeiro frame.
 - Suporte a `viewport-fit=cover`, safe-area e `VisualViewport` para evitar que a barra do navegador móvel cubra o menu ao abrir a página.
+
+
+## Ajuste 1.3.2 — menu mobile em camada de aplicativo
+A barra inferior agora vive em uma camada fixa independente do conteúdo e é posicionada pela altura real do Visual Viewport. Isso evita que a barra do navegador esconda o menu no primeiro carregamento. O fallback usa `100svh`, garantindo visibilidade mesmo antes do JavaScript estabilizar o viewport.
