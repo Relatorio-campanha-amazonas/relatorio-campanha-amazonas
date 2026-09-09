@@ -28,3 +28,11 @@ Abra `index.html` diretamente no navegador ou publique a pasta inteira em qualqu
 - `docs/relatorio-fonte.pdf` — relatório original
 
 O site não depende de backend.
+
+
+## Navegação (v1.3)
+
+Foi adicionada uma navegação responsiva compartilhada:
+- Desktop: menu superior sticky com links para Painel, Evolução, Território, Estratégia 2026 e Relatório.
+- Mobile: barra inferior fixa com os mesmos destinos e suporte a safe-area em iPhone.
+- Páginas futuras já possuem arquivos-base para evitar links quebrados.
