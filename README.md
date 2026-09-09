@@ -61,3 +61,14 @@ Ordem do menu (desktop e mobile): Relatório → Campanhas → Evolução → Te
 - A antiga aba **Painel** passa a se chamar **Campanhas**.
 - A página reúne agora os ciclos de **2018, 2020, 2024 e o cenário prospectivo de 2026**.
 - Os blocos de 2020 e 2026 foram construídos exclusivamente a partir do relatório-fonte do projeto, com separação explícita entre resultados históricos e projeções.
+
+
+## Atualização 1.6.0 — Eleitorado 2026
+
+- A aba **Campanhas > 2026** passou a usar os quantitativos exatos da base eleitoral de 2026 do TSE.
+- Eleitorado total: **2.801.182**.
+- Voto obrigatório: **2.504.643 (89,41%)**.
+- Voto facultativo: **296.539 (10,59%)**.
+- Manaus: **1.472.138**; interior: **1.329.044**.
+- Foi adicionado um mapa municipal de 2026 reutilizando a mesma malha cartográfica do painel de 2018, agora colorida pelo número de eleitores aptos nos 62 municípios.
+- Os dados municipais somam exatamente 2.801.182 eleitores. A análise estratégica de 2026 continua baseada no relatório; os quantitativos eleitorais foram atualizados com a base TSE.
