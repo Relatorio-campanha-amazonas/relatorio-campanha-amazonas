@@ -1,0 +1,16 @@
+DASHBOARD ELEITORAL — AMAZONAS 2018 E MANAUS 2024
+
+CONTEÚDO
+- index.html: interface completa do dashboard.
+- data.js: dados eleitorais e geometria do mapa.
+
+COMO INCORPORAR NO PORTAL
+1. Extraia o ZIP.
+2. Envie index.html e data.js para a mesma pasta no servidor.
+3. Abra o endereço correspondente ao index.html.
+
+O dashboard é estático e não exige banco de dados ou instalação de dependências.
+Para incorporar dentro de outra página, também é possível carregar o index.html em um iframe.
+
+IMPORTANTE
+Mantenha o arquivo data.js ao lado do index.html, pois o painel o carrega pelo caminho relativo "data.js".
