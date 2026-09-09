@@ -49,3 +49,9 @@ A barra inferior agora vive em uma camada fixa independente do conteúdo e é po
 
 
 Ordem do menu (desktop e mobile): Relatório → Painel → Evolução → Território → 2026.
+
+
+## Versão 1.4.0 — página Relatório
+- O conteúdo integral do PDF foi convertido em página web navegável em `relatorio.html`.
+- Inclui sumário lateral, tabelas, Q&A expansível, referências clicáveis e acesso ao PDF original.
+- Mantida a navegação responsiva do site (menu superior desktop e barra inferior mobile).
