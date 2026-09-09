@@ -33,7 +33,7 @@ O site não depende de backend.
 ## Navegação (v1.3)
 
 Foi adicionada uma navegação responsiva compartilhada:
-- Desktop: menu superior sticky com links para Painel, Evolução, Território, Estratégia 2026 e Relatório.
+- Desktop: menu superior sticky com links para Relatório, Campanhas, Evolução, Território e Estratégia 2026.
 - Mobile: barra inferior fixa com os mesmos destinos e suporte a safe-area em iPhone.
 - Páginas futuras já possuem arquivos-base para evitar links quebrados.
 
@@ -48,10 +48,16 @@ Foi adicionada uma navegação responsiva compartilhada:
 A barra inferior agora vive em uma camada fixa independente do conteúdo e é posicionada pela altura real do Visual Viewport. Isso evita que a barra do navegador esconda o menu no primeiro carregamento. O fallback usa `100svh`, garantindo visibilidade mesmo antes do JavaScript estabilizar o viewport.
 
 
-Ordem do menu (desktop e mobile): Relatório → Painel → Evolução → Território → 2026.
+Ordem do menu (desktop e mobile): Relatório → Campanhas → Evolução → Território → 2026.
 
 
 ## Versão 1.4.0 — página Relatório
 - O conteúdo integral do PDF foi convertido em página web navegável em `relatorio.html`.
 - Inclui sumário lateral, tabelas, Q&A expansível, referências clicáveis e acesso ao PDF original.
 - Mantida a navegação responsiva do site (menu superior desktop e barra inferior mobile).
+
+
+## Atualização 1.5.0 — Campanhas
+- A antiga aba **Painel** passa a se chamar **Campanhas**.
+- A página reúne agora os ciclos de **2018, 2020, 2024 e o cenário prospectivo de 2026**.
+- Os blocos de 2020 e 2026 foram construídos exclusivamente a partir do relatório-fonte do projeto, com separação explícita entre resultados históricos e projeções.
