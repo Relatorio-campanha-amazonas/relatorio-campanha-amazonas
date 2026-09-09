@@ -36,3 +36,9 @@ Foi adicionada uma navegação responsiva compartilhada:
 - Desktop: menu superior sticky com links para Painel, Evolução, Território, Estratégia 2026 e Relatório.
 - Mobile: barra inferior fixa com os mesmos destinos e suporte a safe-area em iPhone.
 - Páginas futuras já possuem arquivos-base para evitar links quebrados.
+
+
+## Versão 1.3.1 — correção do menu mobile
+- A barra de navegação inferior agora é carregada imediatamente após a abertura do `<body>`, antes dos scripts pesados do painel.
+- `position: fixed` reforçado para permanecer visível desde o primeiro frame.
+- Suporte a `viewport-fit=cover`, safe-area e `VisualViewport` para evitar que a barra do navegador móvel cubra o menu ao abrir a página.
