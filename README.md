@@ -83,3 +83,7 @@ Ordem do menu (desktop e mobile): Relatório → Campanhas → Evolução → Te
 - A seção Campanhas > 2024 passou a usar integralmente os números do 2º turno de 27/10/2024.
 - KPIs: 1.446.122 aptos; 1.107.870 comparecimentos; 1.055.468 votos válidos; David Almeida 576.171 (54,59%); Capitão Alberto Neto 479.297 (45,41%); 338.252 abstenções (23,39%); 22.161 brancos; 30.241 nulos.
 - O explorador das 13 zonas eleitorais também foi atualizado para a votação do 2º turno.
+
+
+## Ícone do site
+O favicon e o ícone para atalhos mobile estão em `assets/icone-site.png` e são referenciados em todas as páginas HTML.
