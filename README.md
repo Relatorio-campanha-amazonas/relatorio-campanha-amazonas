@@ -87,3 +87,10 @@ Ordem do menu (desktop e mobile): Relatório → Campanhas → Evolução → Te
 
 ## Ícone do site
 O favicon e o ícone para atalhos mobile estão em `assets/icone-site.png` e são referenciados em todas as páginas HTML.
+
+
+## Atualização 1.6.6
+- 2020 e 2024 agora usam a malha oficial de bairros de Manaus (SEMEF/IPAAM), carregada dinamicamente.
+- A tabela lateral das campanhas municipais lista bairros de Manaus, não municípios do Amazonas.
+- 2018 e 2026 permanecem com o mapa do Amazonas.
+- Recomenda-se limpar cache do navegador ao substituir a versão anterior.
